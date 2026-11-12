@@ -1,5 +1,7 @@
 # jobpost-lens
 
+#Work In Progress
+
 jobpost-lens searches a sample of job postings by meaning. It reads `data/postings.csv`, keeps rows with a title and description, turns `original_listed_time` from Unix milliseconds into `listed_at`, and takes 50 rows spaced evenly across that date range (`random_state=42`). Each row becomes a short card (title, location, work type, experience level, and the description trimmed to 800 characters). `sentence-transformers/all-MiniLM-L6-v2` embeds the title and the card into 384-dimensional vectors, stored in Postgres with pgvector. Search ranks postings by cosine distance, with optional date and work-type filters. Eval compares the title vector and the full-card vector with Hit@1, Hit@5, and MRR.
 
 ## How to run
