@@ -1,0 +1,6 @@
+pandas
+psycopg[binary]
+pgvector
+sentence-transformers
+python-dotenv
+streamlit
